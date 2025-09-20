@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Nicoll! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with title -->
+        <header class="header">
+            <h1 class="main-title">¡Feliz Cumpleaños!</h1>
+            <h2 class="name-title">Nicoll</h2>
+            <div class="sparkles">✨✨✨</div>
+        </header>
+
+        <!-- Floating balloons -->
+        <div class="balloons">
+            <div class="balloon balloon-1" data-color="pink"></div>
+            <div class="balloon balloon-2" data-color="purple"></div>
+            <div class="balloon balloon-3" data-color="blue"></div>
+            <div class="balloon balloon-4" data-color="yellow"></div>
+            <div class="balloon balloon-5" data-color="red"></div>
+        </div>
+
+        <!-- Floating characters -->
+        <div class="floating-characters">
+            <div class="floating-character floating-supporter floating-char-1">
+                <img src="img/p2_-_copia-removebg-preview.png" alt="Amigo flotante">
+            </div>
+            <div class="floating-character floating-birthday-girl floating-char-2">
+                <img src="img/ella.png" alt="Nicoll flotando">
+            </div>
+        </div>
+
+        <!-- Birthday cake with candles -->
+        <div class="cake-section">
+            <div class="cake">
+                <div class="candles">
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+                <div class="cake-body">
+                    <div class="cake-layer layer-1"></div>
+                    <div class="cake-layer layer-2"></div>
+                    <div class="cake-layer layer-3"></div>
+                </div>
+            </div>
+            <p class="blow-instruction">🌬️ ¡Haz click en las velas para soplarlas!</p>
+        </div>
+
+        <!-- Personal message -->
+        <div class="message-section">
+            <div class="message-card">
+                <h3>Un día muy especial</h3>
+                <p class="message-text">
+                    Querida Nicoll,<br><br>
+                    Espero que hoy encuentres un poco de alegría, tranquilidad, y que puedas compartir el día con personas que te aprecien. Yo, por mi parte, estoy muy feliz de poder estar cerca.
+
+Eres una persona fuerte, con una luz muy especial, y de verdad deseo que este nuevo ciclo te traiga paz, momentos bonitos y personas que te sumen (me incluyo ahí).
+                    <br>
+                    <br>
+                    Un abrazo grande,
+                    <br>Gianpierre.
+                </p>
+            </div>
+        </div>
+
+        <!-- Interactive elements -->
+        <div class="interactive-section">
+            <button class="confetti-btn" onclick="launchConfetti()">
+                🎉 ¡Más confeti!
+            </button>
+            <button class="music-btn" onclick="toggleMusic()">
+                🎵 Música
+            </button>
+            <button class="surprise-btn" onclick="showSurprise()">
+                🎁 Sorpresa
+            </button>
+        </div>
+
+        <!-- Surprise modal -->
+        <div id="surprise-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSurprise()">&times;</span>
+                <h3>🎁 ¡Sorpresa especial para Nicoll! 🎁</h3>
+                <div class="celebration-theater">
+                    <div class="characters-stage">
+                        <div class="character character-supporter character-1">
+                            <img src="img/p2_-_copia-removebg-preview.png" alt="Amigo Snoopy">
+                            <div class="speech-bubble">¡Feliz cumpleaños, Nicoll!</div>
+                        </div>
+                        <div class="character character-birthday-girl character-2">
+                            <img src="img/ella.png" alt="Nicoll - La Cumpleañera">
+                            <div class="speech-bubble">¡Es mi día especial! 🎂</div>
+                        </div>
+                        <div class="character character-supporter character-3">
+                            <img src="img/perro.png" alt="Amigo Perrito">
+                            <div class="speech-bubble">¡Celebremos a Nicoll!</div>
+                        </div>
+                    </div>
+                    <div class="gift-content">
+                        <div class="animated-gift-box">
+                            <div class="gift-lid"></div>
+                            <div class="gift-base"></div>
+                            <div class="gift-ribbon"></div>
+                        </div>
+                        <div class="surprise-message">
+                            <p class="main-message">¡Los mejores deseos para ti!</p>
+                            <div class="wishes-container">
+                                <div class="wish-card">💫 Que cada día te traiga nueva alegría</div>
+                                <div class="wish-card">🌟 Que todos tus sueños se hagan realidad</div>
+                                <div class="wish-card">🦋 Que vivas aventuras maravillosas</div>
+                                <div class="wish-card">🌈 Que cada momento sea especial</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="celebration-actions">
+                        <button class="party-btn" onclick="startCharacterParty()">🎉 ¡Que bailen!</button>
+                        <button class="wishes-btn" onclick="showMoreWishes()">💌 Más deseos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+
+    <!-- Audio element -->
+    <audio id="birthday-music" loop>
+        <source src="TU_NUEVA_CANCION.mp3" type="audio/mpeg">
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+        <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mpeg">
+        <!-- Fallback: Si no hay archivo local, usar música alegre -->
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
